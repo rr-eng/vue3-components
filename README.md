@@ -1,4 +1,4 @@
-## npm + vue3 + webpack5 实现的业务组件库项目模板
+## npm + vue3 + webpack5 + typescript 实现的多页面项目模板，不使用vue-cli
 
 ### 包管理工具：npm
 
@@ -138,3 +138,37 @@ babel-loader 通过 preset 预设的方式引入@babel/preset-typescript 来编�
 ### webpack 为css添加前缀
 
 `npm install postcss postcss-loader autoprefixer -D` 需要在less，css解析时postcss-loader，创建postcss.config.js引入autoprefixer插件，并配置overrideBrowserslist属性（测试时发现如果不配置overrideBrowserslist，添加前缀不会生效）
+
+也可以不安装autoprefixer，只安装postcss-preset-env（整合了很多常用的插件，包括autoprefixer）
+
+### px2rem
+`npm install postcss-pxtorem -D`
+
+### webpack配置文件解析
+webpack.base.config.js：
+
+多页面打包
+
+资源解析：vue解析、less解析、ts解析、图片字体解析
+
+样式增强：css前缀补齐  px2rem
+
+目录清理
+
+提取css为单独的文件
+
+生成html文件
+
+resolve解析
+
+webpack.dev.config.js：
+
+热更新
+
+source-map
+
+webpack.prod.config.js：
+
+
+
+

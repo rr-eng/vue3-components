@@ -1,5 +1,6 @@
 <template>
   <div class="index-container">
+    <p>Index Page</p>
     <p>{{ count }}</p>
     <img src="./resource/logo.png" alt="" />
   </div>
@@ -25,8 +26,10 @@ export default defineComponent({
 }
 
 .index-container {
+  display: flex;
+  flex-direction: column;
   color: #f00;
   font-family: 'HYYaKuHei';
-  display: flex;
+  font-size: 30px;
 }
 </style>
