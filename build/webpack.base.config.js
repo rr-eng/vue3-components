@@ -31,32 +31,11 @@ const { entry, htmlWebpackPlugins } = setMPA();
 
 module.exports = {
   entry: entry,
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name].[chunkhash:8].js'
-  },
   module: {
     rules: [
       {
         test: /\.vue$/,
         use: 'vue-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
       },
       {
         test: /\.tsx?$/,
@@ -81,6 +60,23 @@ module.exports = {
             ]
           ]
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'less-loader'
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
